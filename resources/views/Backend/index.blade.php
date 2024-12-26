@@ -1,3 +1,4 @@
+<title>Admin Pannel</title>
 @extends('Backend/master')
 @section('content')
             <div class="row">
