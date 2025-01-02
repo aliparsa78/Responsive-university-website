@@ -12,6 +12,9 @@ class BlogController extends Controller
         $blogs = blog::get();
         return view('Blogs.index',compact('blogs'));
     }
+    function add(request $req){
+        return view('Blogs/blog_form');
+    }
     function insert(request $req)
     {
         $blog = new blog();
@@ -20,7 +23,7 @@ class BlogController extends Controller
         $blog->blog_detail = $req->details;
         $blog->status = $req->status;
         $blog->save();
-        return back()->with('message','Blog added successfuly');;
+        return redirect('blog')->with('message','Blog added successfuly');;
     }
     function edit(request $req,$id)
     {   

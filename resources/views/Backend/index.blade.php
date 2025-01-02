@@ -1,6 +1,18 @@
 <title>Admin Pannel</title>
 @extends('Backend/master')
 @section('content')
+@if(session()->has('message'))
+<div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+          {{Session::get('message')}}
+      </div>
+@endif
+@if(session()->has('danger'))
+<div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+          {{Session::get('danger')}}
+      </div>
+@endif
             <div class="row">
               <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
                 <div class="card">

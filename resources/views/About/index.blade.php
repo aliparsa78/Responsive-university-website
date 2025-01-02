@@ -16,34 +16,32 @@
 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Blogs table</h4>
-                    <div class="table-responsive">
+                    <h4 class="card-title">About table</h4>
+                    <div class="table table-responsive text-center float-left">
                       <table class="table table-white text-white " style="table-layout: fixed; width: 100%;">
                         <thead >
                           <tr >
                             <th class="text-white"> # </th>
-                            <th class="text-white"> Blog Name </th>
+                            <th class="text-white"> Headline </th>
                             <th class="text-white "  > Details </th>
-                            <th class="text-white"> Capacity </th>
-                            <th class="text-white"> Status</th>
+                            <th class="text-white"> Image </th>
                             <th class="text-white"> Edit</th>
                             <th class="text-white"> Delete</th>
                           </tr>
                         </thead>
                         <tbody>
                             <?php  $id= 1;  ?>
-                        @foreach($blogs as $blog)
+                        @foreach($abouts as $about)
                           <tr>
                             <td> {{$id++}} </td>
-                            <td> {{$blog->blog_name}} </td>
-                            <td style="word-wrap:break-word; word-break: break-all; overflow: auto; max-width: 120px;" > {{$blog->blog_detail}} </td>
-                            <td> {{$blog->blog_capacity}} </td>
-                            <td> {{$blog->status}} </td>
+                            <td style="white-space: normal;"> {{$about->headline}} </td>
+                            <td  style="white-space: normal;"> {{$about->detail}} </td>
+                            <td> <img src="{{asset('images/About/'.$about->image)}}" alt=""> </td>
                             <td> 
-                                <a href="blog_edit/{{$blog->id}}" ><p class="mdi mdi-border-color"></p></a>
+                                <a href="{{route('about.edit',$about->id)}}" class="btn btn-info">Edit</a>
                             </td>
                             <td>  
-                                <form action="blog_delete/{{$blog->id}}" method="POST">
+                                <form action="about_delete/{{$about->id}}" method="POST">
                                   @csrf
                                   <input type="submit" value="delete" class="btn btn-danger">
                                 </form>
