@@ -1,4 +1,4 @@
-<title>Blogs</title>
+<title>Course</title>
 @extends('Backend/master')
 @section('content')
 @if(session()->has('message'))
@@ -16,32 +16,32 @@
 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">About table</h4>
+                    <h4 class="card-title">Course table</h4>
                     <div class="table table-responsive text-center float-left">
                       <table class="table table-white text-white " style="table-layout: fixed; width: 100%;">
                         <thead >
                           <tr >
                             <th class="text-white"> # </th>
-                            <th class="text-white"> Headline </th>
+                            <th class="text-white"> Course Name </th>
                             <th class="text-white "  > Details </th>
-                            <th class="text-white"> Image </th>
+                            <th class="text-white"> Start Date </th>
                             <th class="text-white"> Edit</th>
                             <th class="text-white"> Delete</th>
                           </tr>
                         </thead>
                         <tbody>
                             <?php  $id= 1;  ?>
-                        @foreach($abouts as $about)
+                        @foreach($courses as $course)
                           <tr>
                             <td> {{$id++}} </td>
-                            <td style="white-space: normal;"> {{$about->headline}} </td>
-                            <td  style="white-space: normal;"> {{$about->detail}} </td>
-                            <td> <img src="{{asset('images/About/'.$about->image)}}" alt=""> </td>
+                            <td style="white-space: normal;"> {{$course->course_name}} </td>
+                            <td  style="white-space: normal;"> {{$course->course_detail}} </td>
+                            <td>{{$course->start_date}}</td>
                             <td> 
-                                <a href="{{route('about.edit',$about->id)}}" class="btn btn-info">Edit</a>
+                                <a href="{{route('course.edit',$course->id)}}" class="btn btn-info">Edit</a>
                             </td>
                             <td>  
-                                <form action="{{route('about.destroy',$about->id)}}" method="POST">
+                                <form action="{{route('course.destroy',$course->id)}}" method="POST">
                                   @method('Delete')
                                   @csrf
                                   <input type="submit" value="delete" class="btn btn-danger">

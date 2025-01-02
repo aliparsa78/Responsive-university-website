@@ -41,7 +41,7 @@ class AboutController extends Controller
             return back()->with('warning','Image does not selected');
         }
         $about->save();
-        return redirect('/')->with('message','About created successfuly');
+        return redirect('/about')->with('message','About created successfuly');
     }
 
     /**
@@ -86,6 +86,10 @@ class AboutController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $about = About::find($id);
+        $about->delete();
+        return back()->with('danger','About Deleted Successfuly!');
+        
+
     }
 }

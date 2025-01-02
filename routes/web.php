@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CoursController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified',
     Route::post('/blog_delete/{id}',[BlogController::class,'delete']);
     // About part
     Route::resource('/about',AboutController::class);
+    // Courses
+    Route::resource('/course',CoursController::class);
+
 });

@@ -76,7 +76,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="add_blog">New Blog</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('about.create')}}">About</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('course.create')}}">Courses</a></li>
               </ul>
             </div>
           </li>
@@ -94,7 +94,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="/blog"> Blogs </a></li>
                 <li class="nav-item"> <a class="nav-link" href="/about"> Abuot </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                <li class="nav-item"> <a class="nav-link" href="/course"> Course </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
               </ul>
